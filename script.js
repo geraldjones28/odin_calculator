@@ -1,3 +1,8 @@
+let num1 = 0;
+let op;
+let num2 = 0;
+
+
 function add(a, b) {
     return a + b;
 }
