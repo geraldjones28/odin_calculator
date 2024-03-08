@@ -18,14 +18,14 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: solid 3px black;
-    .row {
+    border: solid 1px black;
+    .row1, .row2, .row3, .row4, .row5 {
         display: flex;
     }
-    .square {
+    .square1, .square2, .square3, .square4 {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: solid black;
+        border: 1px solid black;
     }
 }

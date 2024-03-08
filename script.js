@@ -11,15 +11,16 @@ row.textContent = 5;
 square.textContent = 4;
 makeGrid();
 
+/* Creating the base grid for calculator display */
 function makeGrid() {
     for (let i = 1; i <= row.textContent; i++) {
         const rowDiv = document.createElement("div");
-        rowDiv.setAttribute('class', 'row');
+        rowDiv.setAttribute('class', 'row' + i);
         containerDiv.append(rowDiv);
 
         for (let j = 1; j <= square.textContent; j++) {
             const squareDiv = document.createElement("div");
-            squareDiv.setAttribute('class', 'square');
+            squareDiv.setAttribute('class', 'square' + j);
             squareDiv.style.height = `${600 / row.textContent}px`;
             squareDiv.style.width = `${600 / square.textContent}px`;
             squareDiv.textContent = '0';
@@ -29,6 +30,7 @@ function makeGrid() {
     }
 }
 
+/* All operations */
 function add(a, b) {
     return a + b;
 }
@@ -42,6 +44,7 @@ function divide(a, b) {
     return b == 0 ? "undefined" : a / b;
 }
 
+/* Function for performing the correct operations on numbers */
 function operate(op, num1, num2) {
     if (op === '+') {
         return add(num1, num2);
