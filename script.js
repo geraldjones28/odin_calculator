@@ -24,6 +24,9 @@ function makeGrid() {
         for (let j = 1; j <= square.textContent; j++) {
             const squareDiv = document.createElement("div");
             squareDiv.setAttribute('class', 'square' + j);
+            squareDiv.setAttribute('role', 'button');
+            squareDiv.setAttribute('aria-pressed', 'false');
+            squareDiv.setAttribute('tabindex', '0');
             squareDiv.style.height = `${600 / row.textContent}px`;
             squareDiv.style.width = `${600 / square.textContent}px`;
             squareDiv.textContent = '0';
@@ -72,6 +75,10 @@ function makeGrid() {
     /* ROW5 */
         const row5s1 = document.querySelector('.row5 > .square1');
         row5s1.textContent = "0";
+        /* Turn this into a simple function! */
+        row5s1.addEventListener('click', function() {
+            display(0);
+        });
         const row5s2 = document.querySelector('.row5 > .square2');
         row5s2.textContent = ".";
         const row5s3 = document.querySelector('.row5 > .square3');
@@ -81,13 +88,12 @@ function makeGrid() {
     
 }
 
+/* Displays button pushes into display box */
 function display(input) {
     let dBox = document.getElementById('display');
     let content = document.createTextNode(input + " ");
     dBox.appendChild(content);
 }
-display("hello");
-display("goodbye");
 
 /* All operations */
 function add(a, b) {
