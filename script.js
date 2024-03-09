@@ -80,6 +80,15 @@ function makeGrid() {
         row5s4.textContent = "+";
     
 }
+
+function display(input) {
+    let dBox = document.getElementById('display');
+    let content = document.createTextNode(input + " ");
+    dBox.appendChild(content);
+}
+display("hello");
+display("goodbye");
+
 /* All operations */
 function add(a, b) {
     return a + b;
